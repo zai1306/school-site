@@ -1,0 +1,184 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body {
+  color: white;
+  font-family: "Raleway";
+}
+
+#contact {
+  height: 120vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact h1 {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+  font-family: "Quicksand";
+}
+#contact h3 {
+  text-transform: uppercase;
+  font-family: "Quicksand";
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+}
+
+#contact hr {
+  padding: 0;
+  border: none;
+  border-top: solid 3px white;
+  text-align: center;
+  max-width: 66%;
+  margin: 25px auto 30px;
+}
+#contact hr:after {
+  content: "\f0e0";
+  font-family: "FontAwesome";
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 2em;
+  padding: 0 0.25em;
+  background-color: #0091ea;
+  color: white;
+}
+
+.primary {
+  background: #0091ea;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  background: white;
+  padding: 15px;
+  box-shadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms ease-in-out;
+}
+.form-wrapper:after {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  content: ".";
+  font-size: 0;
+}
+.form-wrapper.is-sent {
+  animation: launch 1.5s ease-in-out;
+}
+
+.floating-label-form-group {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.floating-label-form-group label {
+  display: block;
+  z-index: 0;
+  position: relative;
+  top: 1.5em;
+  margin: 0;
+  font-size: 0.85em;
+  line-height: 1em;
+  vertical-align: middle;
+  vertical-align: baseline;
+  opacity: 0;
+  transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+  z-index: 1;
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 1em;
+  background: none;
+  box-shadow: none !important;
+  resize: none;
+}
+
+.floating-label-form-group-with-value label {
+  top: 0;
+  opacity: 1;
+}
+
+.floating-label-form-group-with-focus label {
+  color: #0091ea;
+}
+
+.send-btn {
+  background: #0091ea;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.3em;
+  color: white;
+  font-family: "Raleway";
+  box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.2);
+  transition: transform 200ms ease-in-out;
+}
+.send-btn:hover {
+  transform: translate(15px, 0px) scale(1.1);
+}
+
+@media screen and (min-width: 300px) and (max-width: 850px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+  }
+  input[type="text"],
+  input[type="email"] {
+    width: 280px;
+  }
+
+  .floating-label-form-group textarea {
+    width: 280px;
+  }
+}
+
+@keyframes launch {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  10%,
+  15% {
+    transform: translateX(0) scale(0.5);
+  }
+  30%,
+  35% {
+    transform: translateX(-20) scale(0.5);
+  }
+  40%,
+  70% {
+    transform: translateX(100vw) scale(0.5);
+  }
+  70% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 0;
+    transform: translateX(100vw) scale(0.5);
+  }
+  72% {
+    opacity: 0;
+    transform: translateX(0px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
